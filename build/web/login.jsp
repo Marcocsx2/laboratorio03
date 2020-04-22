@@ -24,14 +24,14 @@
                 </div>
 
                 <div class="container py-4">
-                    <form action="menu.jsp">
+                    <form action="menu.jsp" method="POST">
                         <div class="form-group">
                             <label>Nombre de Usuario</label>
-                            <input type="text" id="usuario" title="Ingrese su usuario" placeholder="Ingrese Usuario" class="form-control">
+                            <input type="text" name="usuario" title="Ingrese su usuario" placeholder="Ingrese Usuario" class="form-control">
                         </div>
                         <div class="form-group">
                             <label>Contraseña de Usuario</label>
-                            <input type="password" id="contraseña" title="Ingrese contraseña" placeholder="Ingrese Contraseña" class="form-control">
+                            <input type="password" name="password" title="Ingrese contraseña" placeholder="Ingrese Contraseña" class="form-control">
                         </div>
                         <div class="form-group text-center">
                             <input type="submit" id="submit" title="Enviar datos"  class="btn btn-primary">

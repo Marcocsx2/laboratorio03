@@ -10,17 +10,20 @@
         <title>Menu</title>
     </head>
     <body>
-        <% 
-            Libreria lib=new Libreria();
+        <%
+            Libreria lib = new Libreria();
             lib.conectar();
-            String usuario=request.getParameter("usuario");
-            String clave=request.getParameter("contraseña");
-            ResultSet dato=lib.ValidarLogin(usuario , clave);
-            if (lib.numeroCampos > 0) {
+            String usuario = request.getParameter("usuario");
+            String password = request.getParameter("password");
+            ResultSet dato = lib.ValidarLogin(usuario, password);
+            boolean existeregistro = dato.first();
+
+            if (existeregistro) {
         %>
-        <h1> <%=dato.getString(2)%> </h1>
-        <%}else {%>
-        <h2><% out.print("Usuario no registrado"); %></h2>
-        <%}%>
+        <%@include file="header.jsp" %>
+        <h1>Bienvenido al menu</h1>
+        <%} else {%>
+        <h1>Error en el Login</h1>
+        <%}%>        
     </body>
 </html>
